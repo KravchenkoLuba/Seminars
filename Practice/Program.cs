@@ -17,6 +17,7 @@ Console.Write("Input Quart number: ");
 int number = Convert.ToInt32(Console.ReadLine());
 FindCord (number);
 */
+/*
 void DoubleNumber (int N)
 {
     int num = 1;
@@ -29,3 +30,5 @@ void DoubleNumber (int N)
 Console.Write("Input number");
 int N = Convert.ToInt32(Console.ReadLine());
 DoubleNumber (N);
+*/
+
