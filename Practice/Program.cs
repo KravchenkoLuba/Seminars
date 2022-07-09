@@ -32,3 +32,4 @@ int N = Convert.ToInt32(Console.ReadLine());
 DoubleNumber (N);
 */
 
+
