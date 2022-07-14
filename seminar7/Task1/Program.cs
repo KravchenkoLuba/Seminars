@@ -6,7 +6,7 @@ double[,] CreateDoubleArray(int m, int n)
 
     for(int i = 0; i<m; i++)
         for(int j = 0; j<n; j++)
-            newArray[i,j] = new Random().Next(1,11);
+            newArray[i,j] = Math.Round((new Random().Next(0,100) + new Random().NextDouble()),1);
     return newArray;        
 }
 
