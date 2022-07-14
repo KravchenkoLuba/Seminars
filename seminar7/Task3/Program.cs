@@ -20,23 +20,35 @@ void ShowArray(int[,] array)
         
 }
 
-double FindMean(int[,] array)
+double[] FindMean(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-{
-        double mean = 0;
-        for (int j = 0; j < array.GetLength(1); j++)
+    double[] result = new double[array.GetLength(1)];
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        double sum = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-             mean += array[i, j];
+            sum += array[i, j];
         }
-    mean = mean/array.GetLength(0);
-    return mean;
+        double mean = Math.Round((sum/array.GetLength(0)),2);
+        result[j] = mean;
+    }
+    return result;
 }
+
+void ShowOneArray(double[] array)
+{
+    for(int i = 0; i<array.Length; i++)
+    {
+        Console.WriteLine($"Arithmetic mean column  {i} = {array[i]}");
+    }
 }
+
 Console.Write("Input m: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int[,] ourArray =  CreateArray(m,n,1,25);
 ShowArray(ourArray);
-double mean = Convert.ToDouble(Console.WriteLine(FindMean(ourArray)));
+double[] ArrayMean = FindMean(ourArray);
+ShowOneArray(ArrayMean);
